@@ -1,4 +1,7 @@
-const usuario = require("./Sprint 2/Usuario/index.js")
+
+const usuario = require("./Sprint 2/Usuario/index.js");
+const proyecto = require("./Sprint 2/Proyecto/index.js")
+
 
 const { MongoClient } = require("mongodb");
 
@@ -13,6 +16,13 @@ usuario.conexionUsuario()
   .then(console.log)
   .catch(console.error)
   .finally(() => client.close());
+
+
+proyecto.conexionProyecto()
+  .then(console.log)
+  .catch(console.error)
+  .finally(() => client.close());  
+
 
 
 
