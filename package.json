@@ -1,0 +1,25 @@
+{
+  "name": "backend_grupo_6",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MACRI1011/Backend_Grupo_6.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MACRI1011/Backend_Grupo_6/issues"
+  },
+  "homepage": "https://github.com/MACRI1011/Backend_Grupo_6#readme",
+  "dependencies": {
+    "mongodb": "^4.2.0",
+    "nodemon": "^2.0.15"
+  }
+}
