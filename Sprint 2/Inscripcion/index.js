@@ -4,15 +4,21 @@ const url="mongodb+srv://MateoSoto:verde23@gestionproyectos.hw0ed.mongodb.net/";
 const client = new MongoClient(url);
 const dbName = "Gestion-Proyectos";
 
-async function conexion (){
+async function conexionInscripcion (){
     await client.connect();
     console.log("Conexión ONLINE establecida correctamente");
 
      const db=client.db(dbName);
      const collection= db.collection("Inscripcion");
 
-    // const insertDocument = await collection.insertOne({});
-    // console.log("Documento insertado => ", insertDocument);
+    const insertDocument = await collection.insertOne({
+        proyecto_id: "2",
+        usuario_id:"3",
+        estado: "inciado",
+        fechaIngreso: "hoy",
+        fechaFin: "mañana"
+    });
+    console.log("Documento insertado => ", insertDocument);
 
     // const insertDocuments = await collection.insertMany({});
     // console.log("Documento insertado => ", insertDocuments);
@@ -47,7 +53,7 @@ async function conexion (){
 
 }
 
-conexion()
-          .then(console.log)
-          .catch(console.error)
-          .finally(()=>client.close());
+module.exports ={
+    "conexionInscripcion": conexionInscripcion
+
+}

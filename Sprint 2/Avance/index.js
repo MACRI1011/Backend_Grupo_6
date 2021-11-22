@@ -1,24 +1,32 @@
-async function conexion() {
-  const { MongoClient } = require("mongodb");
+const { MongoClient } = require("mongodb");
 
-  const url =
-    "mongodb+srv://erickAdmi:Salem14@gestionproyectos.hw0ed.mongodb.net/";
-  const client = new MongoClient(url);
-  const dbName = "Gestion-Proyectos";
+const url =
+  "mongodb+srv://erickAdmi:Salem14@gestionproyectos.hw0ed.mongodb.net/";
+const client = new MongoClient(url);
+const dbName = "Gestion-Proyectos";
+
+async function conexionAvance() {
   await client.connect();
   console.log("Conexión ONLINE establecida correctamente");
 
   const db = client.db(dbName);
   const collection = db.collection("Avances");
 
-  const insertDocument = await collection.insertOne({});
+  const insertDocument = await collection.insertOne({
+        proyecto_id: "2",
+        usuario_id:"3",
+        estado: "inciado",
+        fechaAvance:"hoy",
+        observaciones: "no hay buen avance"
+
+  });
   console.log("Documento insertado => ", insertDocument);
 
   // const insertDocuments = await collection.insertMany({});
   // console.log("Documento insertado => ", insertDocuments);
 
-  const findDocuments = await collection.find().toArray();
-  console.log("Documentos encontrados => ", findDocuments);
+  // const findDocuments = await collection.find().toArray();
+  // console.log("Documentos encontrados => ", findDocuments);
 
   // const findDocument = await collection.find({});
   // console.log("Documento encontrado => ", findDocument);
@@ -45,7 +53,7 @@ async function conexion() {
   // console.log("Documentos eliminados => ", deleteDocs);
 }
 
-conexion()
-  .then(console.log)
-  .catch(console.error)
-  .finally(() => client.close());
+module.exports ={
+  "conexionAvance": conexionAvance
+
+}
