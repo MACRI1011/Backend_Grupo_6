@@ -12,7 +12,7 @@ async function conexionProyecto (){
      const collection= db.collection("Proyecto");
 
      const insertDocument = await collection.insertOne({
-         nombre:"Ensayo",
+         nombre:"Ensayo1",
          objetivosG:"Aprobar",
          objetivosE:"Mayor a 3",
          presupuesto:100,

@@ -12,21 +12,21 @@ async function conexionUsuario() {
   const db = client.db(dbName);
   const collection = db.collection("Usuarios");
 
-//   const insertDocument = await collection.insertOne({
-//     nombre: "Erick Diaz",
-//     email: "erickdiazul@gmail.com",
-//     cc: 1000375867,
-//     password: "123456",
-//     rol: "Lider",
-//     estado: "Pediente",
-//   });
-//   console.log("Documento insertado => ", insertDocument);
+  const insertDocument = await collection.insertOne({
+    nombre: "Erick Diaz",
+    email: "erickdiazul@gmail.com",
+    cc: 1000375867,
+    password: "123456",
+    rol: "Lider",
+    estado: "Pediente",
+  });
+  console.log("Documento insertado => ", insertDocument);
 
   //   const insertDocuments = await collection.insertMany({});
   //   console.log("Documento insertado => ", insertDocuments);
 
-  const findDocuments = await collection.find().toArray();
-  console.log("Documentos encontrados => ", findDocuments);
+  // const findDocuments = await collection.find().toArray();
+  // console.log("Documentos encontrados => ", findDocuments);
 
   //   const findDocument = await collection.find({});
   //   console.log("Documento encontrado => ", findDocument);
