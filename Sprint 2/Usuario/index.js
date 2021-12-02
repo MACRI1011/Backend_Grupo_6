@@ -2,7 +2,7 @@ async function conexionUsuario() {
   const { MongoClient } = require("mongodb");
 
   const url =
-    "mongodb+srv://erickAdmi:Salem14@gestionproyectos.hw0ed.mongodb.net/";
+    "mongodb+srv://admi:admi1234@gestionproyectos.hw0ed.mongodb.net/";
   const client = new MongoClient(url);
   const dbName = "Gestion-Proyectos";
 
